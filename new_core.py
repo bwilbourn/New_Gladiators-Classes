@@ -4,14 +4,17 @@ from random import randint
 class NewGladiator:
     """ Creates a new gladiator. """
 
-    def __init__(self, health, rage, damage_low, damage_high):
-        """ Each new gladiator has health, rage, damage_low,
+    def __init__(self, health, rage, damage_low, damage_high, name):
+        """ 
+        (int, int, int, int, str)
+        Each new gladiator has health, rage, damage_low,
         and damage_high. """
 
         self.health = health
         self.rage = rage
         self.damage_low = damage_low
         self.damage_high = damage_high
+        self.name = name
 
     def is_dead(self):
         if self.health <= 0:
@@ -42,9 +45,11 @@ class NewGladiator:
         self.health = self.health * .5
 
     def __str__(self):
-        return 'health: {0}, rage: {1}, damage_low: {2}, damage_high: {3}'.format(
-            self.health, self.rage, self.damage_low, self.damage_high)
+        return 'Gladiator: {} || health: {}, rage: {}, damage_low: {}, damage_high: {}'.format(
+            self.name, self.health, self.rage, self.damage_low,
+            self.damage_high)
 
     def __repr__(self):
-        return 'Gladiator({0}, {1}, {2}, {3})'.format(
-            self.health, self.rage, self.damage_low, self.damage_high)
+        return 'Gladiator({0}: {1}, {2}, {3}, {4})'.format(
+            self.name, self.health, self.rage, self.damage_low,
+            self.damage_high)
