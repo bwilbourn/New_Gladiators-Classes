@@ -42,7 +42,10 @@ class NewGladiator:
         super_punch = self.damage_high
         other.health -= super_punch * 2
         self.rage = 0
-        self.health = self.health * .5
+        self.health = self.health // 2
+
+    def get_health_bar(self):
+        return (self.health // 2) * '@'
 
     def __str__(self):
         return 'Gladiator: {} || health: {}, rage: {}, damage_low: {}, damage_high: {}'.format(
