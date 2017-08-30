@@ -10,17 +10,17 @@ def welcome_window():
         '     o          <M  PREPARE FOR TOTAL DOMINATION!!!                       \n'
         '    /| ......  /:M\----------------------------------------------,,,,,,   \n'
         '  (O)[]XXXXXX[]I:K+}=====<\{H\}>=====',
-        'yellow',
+        'blue',
         attrs=['reverse', 'bold'],
         end="")
-    cprint('MADE BY BRITNEY', 'cyan', attrs=['blink'], end="")
+    cprint('MADE BY BRITNEY', 'yellow', attrs=['blink'], end="")
     cprint(
         '====================> \n'
         "    \| ^^^^^^  \:W/----------------------------------------------''''''   \n"
         '     o          <W  A Gladiator Battle Game                               \n'
         '                <W                                                        \n'
         '                (O)                                                       \n',
-        'yellow',
+        'blue',
         attrs=['reverse', 'bold'],
         end="")
     print('\n')
@@ -28,32 +28,32 @@ def welcome_window():
 
 def dead_skull():
     cprint(
-        '                uuuuuuu                        \n'
-        '            uu$$$$$$$$$$$uu                    \n'
-        '         uu$$$$$$$$$$$$$$$$$uu                 \n'
-        '        u$$$$$$$$$$$$$$$$$$$$$u                \n'
-        '       u$$$$$$$$$$$$$$$$$$$$$$$u               \n'
-        '      u$$$$$$$$$$$$$$$$$$$$$$$$$u              \n'
-        '      u$$$$$$$$$$$$$$$$$$$$$$$$$u              \n'
-        '      u$$$$$$"   "$$$"   "$$$$$$u              \n'
-        '      "$$$$"      u$u       $$$$"              \n'
-        '       $$$u       u$u       u$$$               \n'
-        '       $$$u      u$$$u      u$$$               \n'
-        '        "$$$$uu$$$   $$$uu$$$$"                \n'
-        '         "$$$$$$$"   "$$$$$$$"                 \n'
-        '           u$$$$$$$u$$$$$$$u                   \n'
-        '            u$"$"$"$"$"$"$u                    \n'
-        'uuu         $$u$ $ $ $ $u$$        uuu         \n'
-        'u$$$$        $$$$$u$u$u$$$       u$$$$         \n'
-        ' $$$$$uu      "$$$$$$$$$"     uu$$$$$$         \n'
-        ' u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$     \n'
-        '$$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"      \n'
-        ' """      ""$$$$$$$$$$$uu ""$"""               \n'
-        '        uuuu ""$$$$$$$$$$uuu                   \n'
-        ' u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$        \n'
-        ' $$$$$$$$$""""           ""$$$$$$$$$$$"        \n'
-        '  "$$$$$"                      ""$$$$""        \n'
-        '    $$$"                         $$$$"         \n',
+        '                           uuuuuuu                        \n'
+        '                       uu$$$$$$$$$$$uu                    \n'
+        '                    uu$$$$$$$$$$$$$$$$$uu                 \n'
+        '                   u$$$$$$$$$$$$$$$$$$$$$u                \n'
+        '                  u$$$$$$$$$$$$$$$$$$$$$$$u               \n'
+        '                 u$$$$$$$$$$$$$$$$$$$$$$$$$u              \n'
+        '                 u$$$$$$$$$$$$$$$$$$$$$$$$$u              \n'
+        '                 u$$$$$$"   "$$$"   "$$$$$$u              \n'
+        '                 "$$$$"      u$u       $$$$"              \n'
+        '                  $$$u       u$u       u$$$               \n'
+        '                  $$$u      u$$$u      u$$$               \n'
+        '                   "$$$$uu$$$   $$$uu$$$$"                \n'
+        '                    "$$$$$$$"   "$$$$$$$"                 \n'
+        '                      u$$$$$$$u$$$$$$$u                   \n'
+        '                       u$"$"$"$"$"$"$u                    \n'
+        '           uuu         $$u$ $ $ $ $u$$        uuu         \n'
+        '           u$$$$        $$$$$u$u$u$$$       u$$$$         \n'
+        '            $$$$$uu      "$$$$$$$$$"     uu$$$$$$         \n'
+        '            u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$     \n'
+        '           $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"      \n'
+        '            """      ""$$$$$$$$$$$uu ""$"""               \n'
+        '                   uuuu ""$$$$$$$$$$uuu                   \n'
+        '            u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$        \n'
+        '            $$$$$$$$$""""           ""$$$$$$$$$$$"        \n'
+        '             "$$$$$"                      ""$$$$""        \n'
+        '               $$$"                         $$$$"         \n',
         'red',
         attrs=['blink'],
         end="")
@@ -128,10 +128,14 @@ def main():
     gladiator_2 = core.NewGladiator(100, 0, 10, 20, 'Loki')
     while True:
         print(gladiator_1)
-        print(gladiator_1.get_health_bar(), end="\n\n")
+        red_text, white_text = gladiator_1.get_health_bar()
+        print(red_text, end="")
+        print(white_text, end="\n\n")
 
         print(gladiator_2)
-        print(gladiator_2.get_health_bar(), end="\n\n")
+        red_text, white_text = gladiator_2.get_health_bar()
+        print(red_text, end="")
+        print(white_text, end="\n\n")
 
         prep_player_one()
         battle(gladiator_1, gladiator_2)
@@ -151,10 +155,14 @@ def main():
                                                 gladiator_2.name))
             break
     print(gladiator_1)
-    cprint(gladiator_1.get_health_bar(), 'red', end="\n\n")
+    red_text, white_text = gladiator_1.get_health_bar()
+    print(red_text, end="")
+    print(white_text, end="\n\n")
 
     print(gladiator_2)
-    cprint(gladiator_2.get_health_bar(), 'red', end="\n\n")
+    red_text, white_text = gladiator_2.get_health_bar()
+    print(red_text, end="")
+    print(white_text, end="\n\n")
 
 
 if __name__ == '__main__':

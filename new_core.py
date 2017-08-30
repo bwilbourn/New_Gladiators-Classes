@@ -58,8 +58,8 @@ class NewGladiator:
         red_blocks = self.health // 2
         white_blocks = total_blocks - red_blocks
         red_health = colored(red_blocks * '@', 'red', attrs=attrs)
-        missing_health = colored(white_blocks * '@', 'white', attrs=attrs)
-        return red_health + missing_health
+        missing_health = colored(white_blocks * '_', 'white')
+        return red_health, missing_health
 
     def __str__(self):
         return 'Gladiator: {} || health: {}, rage: {}, damage_low: {}, damage_high: {}'.format(
