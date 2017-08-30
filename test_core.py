@@ -43,7 +43,7 @@ class TestNewGladiator:
         gladiator_1 = new_core.NewGladiator(75, 0, 10, 10, 'Loki')
         gladiator_2.punch(gladiator_1)
         assert gladiator_1.rage == 0
-        assert gladiator_2.health == 37.5
+        assert gladiator_2.health == 37
 
     def test_str(self):
         gladiator_1 = new_core.NewGladiator(50, 100, 10, 10, 'Thor')
