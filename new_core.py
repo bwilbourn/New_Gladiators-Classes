@@ -1,4 +1,5 @@
 from random import randint
+from termcolor import colored
 
 
 class NewGladiator:
@@ -36,16 +37,29 @@ class NewGladiator:
         else:
             other.health -= damage_dealt
             self.rage += 15
+
+        other.health = max(other.health, 0)
         return self, other
 
     def punch(self, other):
         super_punch = self.damage_high
         other.health -= super_punch * 2
+        other.health = max(other.health, 0)
         self.rage = 0
         self.health = self.health // 2
 
     def get_health_bar(self):
-        return (self.health // 2) * '@'
+        if self.health <= 45:
+            attrs = ['blink']
+        else:
+            attrs = []
+
+        total_blocks = 50
+        red_blocks = self.health // 2
+        white_blocks = total_blocks - red_blocks
+        red_health = colored(red_blocks * '@', 'red', attrs=attrs)
+        missing_health = colored(white_blocks * '@', 'white', attrs=attrs)
+        return red_health + missing_health
 
     def __str__(self):
         return 'Gladiator: {} || health: {}, rage: {}, damage_low: {}, damage_high: {}'.format(
